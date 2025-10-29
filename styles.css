@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto Mono', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.underline{
+  position: relative;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; 
+  width: 0;
+  height: 2px;
+  background-color: black;  
+  transition: width 0.3s ease;
+}
+
+.underline:hover::after {
+  width: 100%;
+}
+
+
+h1{
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 0rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.hover-word {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Make the word transparent on hover */
+.hover-word:hover {
+  color: transparent;
+}
+
+/* Material icon initially hidden */
+.hover-word .material-symbols-outlined {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%) scale(0.5); /* start below word */
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s ease;
+  color: black; /* Material accent color */
+  pointer-events: none; /* icon won’t block hover */
+}
+
+/* On hover: slide icon up and fade in */
+.hover-word:hover .material-symbols-outlined {
+  transform: translate(-50%, 0) scale(1);
+  opacity: 1;
+}
