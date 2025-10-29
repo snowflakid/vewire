@@ -58,7 +58,7 @@ p {
 
 .hover-word .material-symbols-outlined {
   position: absolute;
-  font-style: 1em;
+  font-size: 1em;
   left: 50%;
   bottom: 0;
   transform: translate(-50%, 100%) scale(0.5); /* start below word */
