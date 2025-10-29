@@ -52,12 +52,10 @@ p {
   transition: color 0.3s ease;
 }
 
-/* Make the word transparent on hover */
 .hover-word:hover {
   color: transparent;
 }
 
-/* Material icon initially hidden */
 .hover-word .material-symbols-outlined {
   position: absolute;
   left: 50%;
@@ -65,12 +63,31 @@ p {
   transform: translate(-50%, 100%) scale(0.5); /* start below word */
   opacity: 0;
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s ease;
-  color: black; /* Material accent color */
+  color: black; 
   pointer-events: none; /* icon won’t block hover */
 }
 
-/* On hover: slide icon up and fade in */
 .hover-word:hover .material-symbols-outlined {
   transform: translate(-50%, 0) scale(1);
   opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) { /* tablets */
+    h1 {
+        font-size: 1.5rem; 
+    }
+    p {
+    font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) { /* phones */
+    h1 {
+        font-size: 1.2rem; 
+    }
+        p {
+    font-size: 0.5rem;
+    }
+
 }
